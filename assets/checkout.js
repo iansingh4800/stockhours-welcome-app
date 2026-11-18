@@ -79,7 +79,23 @@
     show(errorEl, true);
   }
 
+  // Whop Elements (and the Stripe + hCaptcha frames it pulls in) is loaded only
+  // when someone is about to check out. Loaded on page open, those frames grab
+  // focus while they start, which makes iPhones jump down the page.
+  var SDK_SRC = "https://cdn.whop.com/elements/amber/elements.js";
+  var sdkRequested = false;
+  function loadSdk() {
+    if (sdkRequested || typeof window.WhopElements === "function") return;
+    sdkRequested = true;
+    var s = document.createElement("script");
+    s.src = SDK_SRC;
+    s.async = true;
+    s.setAttribute("data-whop-elements", "");
+    document.head.appendChild(s);
+  }
+
   function waitForSdk(timeoutMs) {
+    loadSdk();
     return new Promise(function (resolve, reject) {
       if (typeof window.WhopElements === "function") return resolve(window.WhopElements);
       var started = Date.now();
@@ -195,7 +211,7 @@
 
   function openDialog(plan) {
     var name = PLANS[plan].name;
-    if (titleEl) titleEl.textContent = "🔒 Secure checkout · " + name;
+    if (titleEl) titleEl.textContent = "Secure checkout · " + name;
     dialog.setAttribute("aria-label", "Checkout: " + name);
     if (errorLink) errorLink.setAttribute("href", hostedUrl(plan));
     if (!dialog.open) dialog.showModal();
@@ -206,6 +222,18 @@
   function closeDialog() {
     if (dialog.open) dialog.close();
   }
+
+  // Start loading the SDK as soon as a finger or pointer lands on a checkout
+  // button, so the dialog is usually ready by the time the click fires.
+  ["pointerdown", "touchstart", "focusin"].forEach(function (type) {
+    document.addEventListener(
+      type,
+      function (event) {
+        if (event.target.closest && event.target.closest("[data-checkout]")) loadSdk();
+      },
+      { passive: true }
+    );
+  });
 
   document.addEventListener("click", function (event) {
     var link = event.target.closest && event.target.closest("[data-checkout]");

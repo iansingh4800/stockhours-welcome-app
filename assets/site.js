@@ -1,24 +1,80 @@
-// Welcome app interactions: results reel, lightbox, count-up, holo card,
-// plan builder (upsells), coupon copy, sticky CTA and reveal-on-scroll.
-// Everything degrades to static content.
+// Welcome page interactions: video (self-hosted or YouTube), receipts "see all", lightbox, plan builder
+// (upsells), coupon copy and the sticky bar. Everything degrades to static content.
 (function () {
   "use strict";
 
-  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var finePointer = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   var hasIO = "IntersectionObserver" in window;
 
-  /* ---------- receipts reel: duplicate each row once for a seamless loop ---------- */
-  var tracks = document.querySelectorAll(".marquee__track");
-  for (var t = 0; t < tracks.length; t++) {
-    var track = tracks[t];
-    var originals = Array.prototype.slice.call(track.children);
-    originals.forEach(function (node) {
-      var clone = node.cloneNode(true);
-      clone.setAttribute("data-clone", "");
-      clone.setAttribute("aria-hidden", "true");
-      clone.setAttribute("tabindex", "-1");
-      track.appendChild(clone);
+  /* ---------- open at the top ----------
+     Inside the Whop app the page must open at the hero. Turn off scroll
+     restoration and, until the visitor touches, scrolls or types, undo any
+     scroll that something else (a third-party frame taking focus, a late
+     layout shift) causes. Links to a #section are left alone. */
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  if (!window.location.hash) {
+    var userMoved = false;
+    var markUser = function () {
+      userMoved = true;
+    };
+    ["touchstart", "pointerdown", "wheel", "keydown"].forEach(function (type) {
+      window.addEventListener(type, markUser, { passive: true, capture: true });
+    });
+    var holdTop = function () {
+      if (!userMoved && window.scrollY > 0) window.scrollTo(0, 0);
+    };
+    window.addEventListener("scroll", holdTop, { passive: true });
+    window.addEventListener("load", holdTop);
+    setTimeout(function () {
+      window.removeEventListener("scroll", holdTop);
+    }, 8000);
+  }
+
+  /* ---------- YouTube: load the player only when someone presses play ---------- */
+  var videos = document.querySelectorAll(".video[data-video], .video[data-src]");
+  for (var v = 0; v < videos.length; v++) {
+    (function (box) {
+      var play = box.querySelector(".video__play");
+      if (!play) return;
+      play.addEventListener("click", function () {
+        // Self-hosted video (data-src): swap in a <video> and start it.
+        if (box.hasAttribute("data-src")) {
+          var vid = document.createElement("video");
+          vid.src = box.getAttribute("data-src");
+          vid.poster = box.getAttribute("data-poster") || "";
+          vid.controls = true;
+          vid.playsInline = true;
+          vid.setAttribute("playsinline", "");
+          vid.preload = "auto";
+          vid.setAttribute("aria-label", box.getAttribute("data-title") || "Video");
+          box.replaceChild(vid, play);
+          var started = vid.play();
+          if (started && started.catch) started.catch(function () {});
+          return;
+        }
+        var iframe = document.createElement("iframe");
+        iframe.src =
+          "https://www.youtube-nocookie.com/embed/" + box.getAttribute("data-video") +
+          "?autoplay=1&start=" + (box.getAttribute("data-start") || "0") + "&rel=0&playsinline=1&modestbranding=1";
+        iframe.title = box.getAttribute("data-title") || "Video";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.allowFullscreen = true;
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+        box.replaceChild(iframe, play);
+      });
+    })(videos[v]);
+  }
+
+  /* ---------- receipts: reveal the rest ---------- */
+  var more = document.querySelector("[data-show-more]");
+  if (more) {
+    more.addEventListener("click", function () {
+      var extra = document.querySelectorAll("[data-extra]");
+      for (var x = 0; x < extra.length; x++) extra[x].hidden = false;
+      if (extra[0]) {
+        var btn = extra[0].querySelector("button");
+        if (btn) btn.focus({ preventScroll: true });
+      }
+      more.parentNode.removeChild(more);
     });
   }
 
@@ -80,73 +136,6 @@
       lightbox.close();
     });
   }
-
-  /* ---------- count-up ---------- */
-  function countUp(el) {
-    var target = parseInt(el.getAttribute("data-count"), 10);
-    var prefix = el.getAttribute("data-prefix") || "";
-    if (!target || reduceMotion) return;
-    var start = null;
-    var duration = 1600;
-    function frame(ts) {
-      if (start === null) start = ts;
-      var p = Math.min(1, (ts - start) / duration);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = prefix + Math.round(target * eased).toLocaleString("en-US");
-      if (p < 1) requestAnimationFrame(frame);
-    }
-    el.textContent = prefix + "0";
-    requestAnimationFrame(frame);
-  }
-
-  /* ---------- reveal on scroll + count-up trigger ---------- */
-  var reveals = document.querySelectorAll(".reveal");
-  var counters = document.querySelectorAll("[data-count]");
-  if (hasIO && !reduceMotion) {
-    var io = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-in");
-          var counter = entry.target.querySelector && entry.target.querySelector("[data-count]");
-          if (counter && !counter.hasAttribute("data-counted")) {
-            counter.setAttribute("data-counted", "");
-            countUp(counter);
-          }
-          io.unobserve(entry.target);
-        });
-      },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
-    );
-    for (var r = 0; r < reveals.length; r++) io.observe(reveals[r]);
-  } else {
-    for (var k = 0; k < reveals.length; k++) reveals[k].classList.add("is-in");
-  }
-  // Counters outside a .reveal block still show their final value (no animation).
-  void counters;
-
-  /* ---------- holo card tilt ---------- */
-  var holo = document.querySelector("[data-holo]");
-  if (holo && finePointer && !reduceMotion) {
-    holo.addEventListener("pointermove", function (event) {
-      var rect = holo.getBoundingClientRect();
-      var mx = (event.clientX - rect.left) / rect.width;
-      var my = (event.clientY - rect.top) / rect.height;
-      holo.style.setProperty("--mx", mx.toFixed(3));
-      holo.style.setProperty("--my", my.toFixed(3));
-      holo.style.setProperty("--rx", ((0.5 - my) * 8).toFixed(2) + "deg");
-      holo.style.setProperty("--ry", ((mx - 0.5) * 10).toFixed(2) + "deg");
-      holo.style.setProperty("--prox", "1");
-      holo.setAttribute("data-active", "true");
-    });
-    holo.addEventListener("pointerleave", function () {
-      holo.style.setProperty("--rx", "0deg");
-      holo.style.setProperty("--ry", "0deg");
-      holo.style.setProperty("--prox", "0");
-      holo.removeAttribute("data-active");
-    });
-  }
-
 
   /* ---------- plan builder: Signals / VIP Bundle × monthly / 3 months ----------
      Mirrors nourtrades.com: "Add the Algo" upgrades to the VIP Bundle and
@@ -309,7 +298,7 @@
   if (sticky && hasIO && watched.length) {
     var visible = {};
     var heroPassed = false;
-    var stickyLink = sticky.querySelector("a");
+    var stickyLinks = sticky.querySelectorAll("a");
     var update = function () {
       var anyOnScreen = watched.some(function (el) {
         return visible[el.id];
@@ -317,7 +306,7 @@
       var show = heroPassed && !anyOnScreen;
       sticky.classList.toggle("is-visible", show);
       sticky.setAttribute("aria-hidden", show ? "false" : "true");
-      if (stickyLink) stickyLink.setAttribute("tabindex", show ? "0" : "-1");
+      for (var sl = 0; sl < stickyLinks.length; sl++) stickyLinks[sl].setAttribute("tabindex", show ? "0" : "-1");
     };
     var stickyIO = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {

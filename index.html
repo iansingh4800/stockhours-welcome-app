@@ -4,663 +4,600 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>StockHours</title>
-    <meta name="description" content="Welcome to StockHours. Live trade alerts from Nour with exact entries, targets and stops. Signals Chat from $249/mo." />
+    <meta name="description" content="Trade with Nour. Live trade alerts every market day with the exact entry, target and stop. Signals Chat from $249/mo." />
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="/assets/styles.css" />
-    <script>
-      document.documentElement.classList.add("js");
-    </script>
+    <link rel="preload" href="/assets/fonts/caveat-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/assets/sales.css" />
   </head>
   <body>
-    <div class="brand-page">
-      <!-- ============ NAV ============ -->
-      <header class="nav">
-        <div class="container nav__inner">
-          <a class="nav__brand" href="#top" aria-label="StockHours, back to top">
-            <img src="/assets/img/logo.webp" alt="" width="32" height="32" />
-            <span class="display nav__name">StockHours</span>
-          </a>
-          <div class="nav__right">
-            <span class="nav__rating"><b>★ 4.9</b> · 729 reviews on Whop</span>
-            <a class="cta cta--sm" href="#join">Join signals</a>
+    <a class="topbar" href="#receipts">
+      <span class="topbar__live" aria-hidden="true"></span>
+      <span><b>★ 4.9</b> from 729 reviews on Whop · live alerts every market day</span>
+    </a>
+
+    <main id="top">
+      <!-- ======================= HERO ======================= -->
+      <header class="hero">
+        <div class="wrap">
+          <p class="kicker">You just walked into StockHours</p>
+          <h1 class="h1">Trade with <span class="mark">Nour</span>.</h1>
+          <p class="hero__sub">
+            Pre-market analysis every morning. Live signals all day, each with the <strong>exact entry, target and stop</strong>.
+            A live lesson every night at 8pm ET. Hear it from Nour in 46 seconds.
+          </p>
+
+          <div class="video-wrap">
+            <span class="note note--video" aria-hidden="true">watch this first
+              <svg viewBox="0 0 60 50" class="note__arrow"><path d="M6 6c18 2 34 12 40 34m0 0-9-7m9 7 4-11" /></svg>
+            </span>
+            <div class="video" data-src="/assets/video/vsl.mp4" data-poster="/assets/img/vsl-poster.webp" data-title="Welcome to StockHours, from Nour">
+              <button type="button" class="video__play" aria-label="Play video: Welcome to StockHours, from Nour (46 seconds)">
+                <img src="/assets/img/vsl-poster.webp" width="1280" height="720" alt="" fetchpriority="high" />
+                <span class="video__btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" /></svg></span>
+                <span class="video__label">Welcome to StockHours · 46 sec</span>
+              </button>
+            </div>
           </div>
+
+          <div class="cta-row">
+            <a class="btn btn--xl" href="#join" id="hero-cta">Join the Signals Chat <span class="btn__arrow" aria-hidden="true">→</span></a>
+            <a class="pricetag" href="#join">
+              <span class="pricetag__label">from</span>
+              <span class="pricetag__value">$249<small>/mo</small></span>
+            </a>
+          </div>
+          <p class="facts">Instant access in your Whop sidebar <i>·</i> Cancel anytime <i>·</i> ★ 4.9 (729 reviews) <i>·</i> As seen on <img src="/assets/img/abc-logo.svg" alt="ABC" width="18" height="18" /></p>
         </div>
       </header>
 
-      <main id="top">
-        <!-- ============ HERO ============ -->
-        <section class="hero">
-          <div class="container hero__grid">
-            <div class="hero__copy">
-              <p class="eyebrow">📈 Welcome to StockHours</p>
-              <h1 class="display display--xl hero__title">
-                <span>Trade with</span>
-                <span class="gold-text">Nour</span>
-              </h1>
-              <p class="display hero__kicker">Live alerts. Exact entries, targets &amp; stops.</p>
-              <p class="prose-body hero__sub">
-                you just walked into StockHours, home of Nour, the youngest kid on Wall Street. get in the room where the watchlist goes up before the market opens, not after the move.
-              </p>
-              <div class="hero__ctas">
-                <a class="cta cta--lg" href="#join" id="hero-cta">
-                  Join the Signals Chat <span class="cta__price">· from $249/mo</span>
-                </a>
-                <a class="cta cta--lg cta--ghost" href="#results">See the results</a>
-              </div>
-              <p class="fine-print">instant access in your Whop sidebar. cancel anytime.</p>
-              <ul class="trust" aria-label="Community stats">
-                <li><span class="trust__stars" aria-hidden="true">★★★★★</span><b>4.9</b> · 729 reviews</li>
-                <li class="trust__seen">as seen on <img src="/assets/img/abc-logo.svg" alt="ABC" width="22" height="22" /></li>
-                <li>stocks · options · live every market day</li>
+      <!-- ======================= TICKER ======================= -->
+      <div class="ticker" aria-label="Wins members posted in the StockHours profits chat">
+        <div class="ticker__track">
+          <span class="tick"><b>+$660</b> Omar R <i>Jul 31</i></span>
+          <span class="tick"><b>+$345</b> Trim Trade <i>Jul 31</i></span>
+          <span class="tick"><b>+$54</b> Lilg <i>Jul 31</i></span>
+          <span class="tick"><b>+$837.50</b> Kevtam <i>Jul 30</i></span>
+          <span class="tick"><b>+$500</b> Mohammed S. <i>Jul 28</i></span>
+          <span class="tick"><b>+$385</b> Mohammed S. <i>Jul 28</i></span>
+          <span class="tick"><b>+$105</b> Mohammed S. <i>Jul 28</i></span>
+          <span class="tick"><b>+$641.47</b> obey_antz <i>Jul 23</i></span>
+          <span class="tick"><b>+$5,891.77</b> Trim Trade <i>Jul 22</i></span>
+          <span class="tick"><b>+$2,740</b> Mohammed S. <i>Jul 16</i></span>
+          <span class="tick"><b>+$2,250</b> rish <i>Jul 15</i></span>
+          <span class="tick"><b>+$1,888</b> Profitwithcat <i>Jul 15</i></span>
+          <span class="tick"><b>+$1,000</b> Mohammed S. <i>Jul 15</i></span>
+          <span class="tick"><b>+$720</b> hmmm23 <i>Jul 15</i></span>
+          <span class="tick"><b>+$690</b> Mohammed S. <i>Jul 15</i></span>
+          <span class="tick"><b>+$772</b> hmmm23 <i>Jul 10</i></span>
+          <span class="tick"><b>+$1,480</b> Mohammed S. <i>Jul 9</i></span>
+          <span class="tick"><b>+$110</b> Andrew Mechan <i>Jul 9</i></span>
+          <span class="tick"><b>+$200</b> Mohammed S. <i>Jul 6</i></span>
+          <span class="tick" aria-hidden="true"><b>+$660</b> Omar R <i>Jul 31</i></span>
+          <span class="tick" aria-hidden="true"><b>+$345</b> Trim Trade <i>Jul 31</i></span>
+          <span class="tick" aria-hidden="true"><b>+$54</b> Lilg <i>Jul 31</i></span>
+          <span class="tick" aria-hidden="true"><b>+$837.50</b> Kevtam <i>Jul 30</i></span>
+          <span class="tick" aria-hidden="true"><b>+$500</b> Mohammed S. <i>Jul 28</i></span>
+          <span class="tick" aria-hidden="true"><b>+$385</b> Mohammed S. <i>Jul 28</i></span>
+          <span class="tick" aria-hidden="true"><b>+$105</b> Mohammed S. <i>Jul 28</i></span>
+          <span class="tick" aria-hidden="true"><b>+$641.47</b> obey_antz <i>Jul 23</i></span>
+          <span class="tick" aria-hidden="true"><b>+$5,891.77</b> Trim Trade <i>Jul 22</i></span>
+          <span class="tick" aria-hidden="true"><b>+$2,740</b> Mohammed S. <i>Jul 16</i></span>
+          <span class="tick" aria-hidden="true"><b>+$2,250</b> rish <i>Jul 15</i></span>
+          <span class="tick" aria-hidden="true"><b>+$1,888</b> Profitwithcat <i>Jul 15</i></span>
+          <span class="tick" aria-hidden="true"><b>+$1,000</b> Mohammed S. <i>Jul 15</i></span>
+          <span class="tick" aria-hidden="true"><b>+$720</b> hmmm23 <i>Jul 15</i></span>
+          <span class="tick" aria-hidden="true"><b>+$690</b> Mohammed S. <i>Jul 15</i></span>
+          <span class="tick" aria-hidden="true"><b>+$772</b> hmmm23 <i>Jul 10</i></span>
+          <span class="tick" aria-hidden="true"><b>+$1,480</b> Mohammed S. <i>Jul 9</i></span>
+          <span class="tick" aria-hidden="true"><b>+$110</b> Andrew Mechan <i>Jul 9</i></span>
+          <span class="tick" aria-hidden="true"><b>+$200</b> Mohammed S. <i>Jul 6</i></span>
+        </div>
+      </div>
+
+      <!-- ======================= STATEMENT ======================= -->
+      <section class="block" id="story">
+        <div class="wrap split">
+          <div class="split__copy">
+            <h2 class="h2">One member.<br />Twenty-three days.<br /><span class="money">$7,100.</span></h2>
+            <p>Mohammed S. trades TSLA and AAPL options. Between July 6 and July 28 he posted eight closed winners in the StockHours profits chat.</p>
+            <p>His biggest: <strong>+$2,740</strong> on a TSLA $395 call. His smallest: <strong>+$105</strong>. Every one is a real order screen.</p>
+            <p class="muted">These are the winners he posted, not his full account history. Tap any line to see the order.</p>
+          </div>
+
+          <div class="statement">
+            <div class="statement__head">
+              <span>Profits chat · posted wins</span>
+              <span>Mohammed S. · Jul 2026</span>
+            </div>
+            <ol class="statement__rows">
+              <li><button type="button" data-full="/assets/img/wall/328.webp" data-caption="Mohammed S. · +$200 TSLA $402.5 call · Jul 6">
+                <span class="row__date">Jul 6</span><span class="row__desc">TSLA $402.5 call</span><span class="row__amt">+$200.00</span>
+              </button></li>
+              <li><button type="button" data-full="/assets/img/wall/306.webp" data-caption="Mohammed S. · +$1,480 TSLA $400 call · Jul 9">
+                <span class="row__date">Jul 9</span><span class="row__desc">TSLA $400 call</span><span class="row__amt">+$1,480.00</span>
+              </button></li>
+              <li><button type="button" data-full="/assets/img/wall/211.webp" data-caption="Mohammed S. · +$690 AAPL $322.5 call · Jul 15">
+                <span class="row__date">Jul 15</span><span class="row__desc">AAPL $322.5 call</span><span class="row__amt">+$690.00</span>
+              </button></li>
+              <li><button type="button" data-full="/assets/img/wall/208.webp" data-caption="Mohammed S. · +$1,000 TSLA $392.5 put · Jul 15">
+                <span class="row__date">Jul 15</span><span class="row__desc">TSLA $392.5 put</span><span class="row__amt">+$1,000.00</span>
+              </button></li>
+              <li><button type="button" data-full="/assets/img/wall/195.webp" data-caption="Mohammed S. · +$2,740 TSLA $395 call · Jul 16">
+                <span class="row__date">Jul 16</span><span class="row__desc">TSLA $395 call</span><span class="row__amt">+$2,740.00</span>
+              </button></li>
+              <li><button type="button" data-full="/assets/img/wall/68.webp" data-caption="Mohammed S. · +$105 TSLA $300 put · Jul 28">
+                <span class="row__date">Jul 28</span><span class="row__desc">TSLA $300 put</span><span class="row__amt">+$105.00</span>
+              </button></li>
+              <li><button type="button" data-full="/assets/img/wall/70.webp" data-caption="Mohammed S. · +$385 TSLA $300 put · Jul 28">
+                <span class="row__date">Jul 28</span><span class="row__desc">TSLA $300 put</span><span class="row__amt">+$385.00</span>
+              </button></li>
+              <li><button type="button" data-full="/assets/img/wall/73.webp" data-caption="Mohammed S. · +$500 TSLA $302.5 call · Jul 28">
+                <span class="row__date">Jul 28</span><span class="row__desc">TSLA $302.5 call</span><span class="row__amt">+$500.00</span>
+              </button></li>
+            </ol>
+            <div class="statement__total">
+              <span>Total posted</span>
+              <span class="statement__sum">
+                +$7,100.00
+                <svg class="circle" viewBox="0 0 200 70" aria-hidden="true" preserveAspectRatio="none"><path d="M150 8C96 0 24 6 10 30c-12 22 40 36 98 34 52-2 92-16 86-36C188 10 148 4 112 6" /></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= RECEIPTS ======================= -->
+      <section class="block block--alt" id="receipts">
+        <div class="wrap">
+          <div class="head">
+            <h2 class="h2">Don't take our word for it.<br /><span class="mark">Here are the receipts.</span></h2>
+            <p>Every screenshot below was posted by a member in the StockHours profits chat in July. The biggest day: <strong>Trim Trade, +$5,891.77</strong>, up 318%. Tap any one to see it full size.</p>
+          </div>
+          <ul class="receipts">
+            <li><button type="button" class="receipt" data-full="/assets/img/wall/149.webp" data-caption="Trim Trade · +$5,891.77 day P&amp;L (+318%) · Jul 22">
+              <img src="/assets/img/wall/149.webp" alt="Trim Trade posted +$5,891.77 (day P&amp;L (+318%)) in the StockHours profits chat, Jul 22" width="667" height="557" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+$5,891.77</b> <span>day P&amp;L (+318%)</span> <i>Trim Trade · Jul 22</i></span>
+            </button></li>
+            <li><button type="button" class="receipt" data-full="/assets/img/wall/195.webp" data-caption="Mohammed S. · +$2,740 TSLA $395 call · Jul 16">
+              <img src="/assets/img/wall/195.webp" alt="Mohammed S. posted +$2,740 (TSLA $395 call) in the StockHours profits chat, Jul 16" width="720" height="604" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+$2,740</b> <span>TSLA $395 call</span> <i>Mohammed S. · Jul 16</i></span>
+            </button></li>
+            <li><button type="button" class="receipt" data-full="/assets/img/wall/214.webp" data-caption="rish · +$2,250 day: TSLA, META, AAPL · Jul 15">
+              <img src="/assets/img/wall/214.webp" alt="rish posted +$2,250 (day: TSLA, META, AAPL) in the StockHours profits chat, Jul 15" width="677" height="640" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+$2,250</b> <span>day: TSLA, META, AAPL</span> <i>rish · Jul 15</i></span>
+            </button></li>
+            <li><button type="button" class="receipt" data-full="/assets/img/wall/218.webp" data-caption="Profitwithcat · +$1,888 AAPL $320 call · Jul 15">
+              <img src="/assets/img/wall/218.webp" alt="Profitwithcat posted +$1,888 (AAPL $320 call) in the StockHours profits chat, Jul 15" width="720" height="521" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+$1,888</b> <span>AAPL $320 call</span> <i>Profitwithcat · Jul 15</i></span>
+            </button></li>
+            <li><button type="button" class="receipt" data-full="/assets/img/wall/306.webp" data-caption="Mohammed S. · +$1,480 TSLA $400 call · Jul 9">
+              <img src="/assets/img/wall/306.webp" alt="Mohammed S. posted +$1,480 (TSLA $400 call) in the StockHours profits chat, Jul 9" width="720" height="588" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+$1,480</b> <span>TSLA $400 call</span> <i>Mohammed S. · Jul 9</i></span>
+            </button></li>
+            <li><button type="button" class="receipt" data-full="/assets/img/wall/208.webp" data-caption="Mohammed S. · +$1,000 TSLA $392.5 put · Jul 15">
+              <img src="/assets/img/wall/208.webp" alt="Mohammed S. posted +$1,000 (TSLA $392.5 put) in the StockHours profits chat, Jul 15" width="720" height="606" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+$1,000</b> <span>TSLA $392.5 put</span> <i>Mohammed S. · Jul 15</i></span>
+            </button></li>
+            <li><button type="button" class="receipt" data-full="/assets/img/wall/33.webp" data-caption="Kevtam · +$837.50 TSLA puts · Jul 30">
+              <img src="/assets/img/wall/33.webp" alt="Kevtam posted +$837.50 (TSLA puts) in the StockHours profits chat, Jul 30" width="720" height="562" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+$837.50</b> <span>TSLA puts</span> <i>Kevtam · Jul 30</i></span>
+            </button></li>
+            <li><button type="button" class="receipt" data-full="/assets/img/wall/287.webp" data-caption="hmmm23 · +$772 NVDA $205 call · Jul 10">
+              <img src="/assets/img/wall/287.webp" alt="hmmm23 posted +$772 (NVDA $205 call) in the StockHours profits chat, Jul 10" width="720" height="586" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+$772</b> <span>NVDA $205 call</span> <i>hmmm23 · Jul 10</i></span>
+            </button></li>
+            <li data-extra hidden><button type="button" class="receipt" data-full="/assets/img/wall/236.webp" data-caption="hmmm23 · +$720 TSLA $402.5 call · Jul 15">
+              <img src="/assets/img/wall/236.webp" alt="hmmm23 posted +$720 (TSLA $402.5 call) in the StockHours profits chat, Jul 15" width="720" height="571" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+$720</b> <span>TSLA $402.5 call</span> <i>hmmm23 · Jul 15</i></span>
+            </button></li>
+            <li data-extra hidden><button type="button" class="receipt" data-full="/assets/img/wall/211.webp" data-caption="Mohammed S. · +$690 AAPL $322.5 call · Jul 15">
+              <img src="/assets/img/wall/211.webp" alt="Mohammed S. posted +$690 (AAPL $322.5 call) in the StockHours profits chat, Jul 15" width="720" height="614" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+$690</b> <span>AAPL $322.5 call</span> <i>Mohammed S. · Jul 15</i></span>
+            </button></li>
+            <li data-extra hidden><button type="button" class="receipt" data-full="/assets/img/wall/21.webp" data-caption="Omar R · +$660 NVDA, +7.65% day · Jul 31">
+              <img src="/assets/img/wall/21.webp" alt="Omar R posted +$660 (NVDA, +7.65% day) in the StockHours profits chat, Jul 31" width="717" height="542" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+$660</b> <span>NVDA, +7.65% day</span> <i>Omar R · Jul 31</i></span>
+            </button></li>
+            <li data-extra hidden><button type="button" class="receipt" data-full="/assets/img/wall/134.webp" data-caption="obey_antz · +$641.47 closed positions · Jul 23">
+              <img src="/assets/img/wall/134.webp" alt="obey_antz posted +$641.47 (closed positions) in the StockHours profits chat, Jul 23" width="720" height="520" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+$641.47</b> <span>closed positions</span> <i>obey_antz · Jul 23</i></span>
+            </button></li>
+            <li data-extra hidden><button type="button" class="receipt" data-full="/assets/img/wall/73.webp" data-caption="Mohammed S. · +$500 TSLA $302.5 call · Jul 28">
+              <img src="/assets/img/wall/73.webp" alt="Mohammed S. posted +$500 (TSLA $302.5 call) in the StockHours profits chat, Jul 28" width="720" height="594" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+$500</b> <span>TSLA $302.5 call</span> <i>Mohammed S. · Jul 28</i></span>
+            </button></li>
+            <li data-extra hidden><button type="button" class="receipt" data-full="/assets/img/wall/70.webp" data-caption="Mohammed S. · +$385 TSLA $300 put · Jul 28">
+              <img src="/assets/img/wall/70.webp" alt="Mohammed S. posted +$385 (TSLA $300 put) in the StockHours profits chat, Jul 28" width="720" height="581" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+$385</b> <span>TSLA $300 put</span> <i>Mohammed S. · Jul 28</i></span>
+            </button></li>
+            <li data-extra hidden><button type="button" class="receipt" data-full="/assets/img/wall/8.webp" data-caption="Trim Trade · +$345 MSFT $460 call · Jul 31">
+              <img src="/assets/img/wall/8.webp" alt="Trim Trade posted +$345 (MSFT $460 call) in the StockHours profits chat, Jul 31" width="616" height="580" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+$345</b> <span>MSFT $460 call</span> <i>Trim Trade · Jul 31</i></span>
+            </button></li>
+            <li data-extra hidden><button type="button" class="receipt" data-full="/assets/img/wall/328.webp" data-caption="Mohammed S. · +$200 TSLA $402.5 call · Jul 6">
+              <img src="/assets/img/wall/328.webp" alt="Mohammed S. posted +$200 (TSLA $402.5 call) in the StockHours profits chat, Jul 6" width="720" height="595" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+$200</b> <span>TSLA $402.5 call</span> <i>Mohammed S. · Jul 6</i></span>
+            </button></li>
+            <li data-extra hidden><button type="button" class="receipt" data-full="/assets/img/wall/308.webp" data-caption="Andrew Mechan · +$110 NVDA $200 call (+112%) · Jul 9">
+              <img src="/assets/img/wall/308.webp" alt="Andrew Mechan posted +$110 (NVDA $200 call (+112%)) in the StockHours profits chat, Jul 9" width="720" height="598" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+$110</b> <span>NVDA $200 call (+112%)</span> <i>Andrew Mechan · Jul 9</i></span>
+            </button></li>
+            <li data-extra hidden><button type="button" class="receipt" data-full="/assets/img/wall/68.webp" data-caption="Mohammed S. · +$105 TSLA $300 put · Jul 28">
+              <img src="/assets/img/wall/68.webp" alt="Mohammed S. posted +$105 (TSLA $300 put) in the StockHours profits chat, Jul 28" width="720" height="503" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+$105</b> <span>TSLA $300 put</span> <i>Mohammed S. · Jul 28</i></span>
+            </button></li>
+            <li data-extra hidden><button type="button" class="receipt" data-full="/assets/img/wall/62.webp" data-caption="mohrah0402 · +20.15% day: AAPL, AMD · Jul 29">
+              <img src="/assets/img/wall/62.webp" alt="mohrah0402 posted +20.15% (day: AAPL, AMD) in the StockHours profits chat, Jul 29" width="720" height="629" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+20.15%</b> <span>day: AAPL, AMD</span> <i>mohrah0402 · Jul 29</i></span>
+            </button></li>
+            <li data-extra hidden><button type="button" class="receipt" data-full="/assets/img/wall/6.webp" data-caption="mohrah0402 · +16.56% day: NVDA, MSFT · Jul 31">
+              <img src="/assets/img/wall/6.webp" alt="mohrah0402 posted +16.56% (day: NVDA, MSFT) in the StockHours profits chat, Jul 31" width="720" height="544" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+16.56%</b> <span>day: NVDA, MSFT</span> <i>mohrah0402 · Jul 31</i></span>
+            </button></li>
+            <li data-extra hidden><button type="button" class="receipt" data-full="/assets/img/wall/100.webp" data-caption="slickwilly2727 · +14.47% day P&amp;L · Jul 27">
+              <img src="/assets/img/wall/100.webp" alt="slickwilly2727 posted +14.47% (day P&amp;L) in the StockHours profits chat, Jul 27" width="592" height="582" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+14.47%</b> <span>day P&amp;L</span> <i>slickwilly2727 · Jul 27</i></span>
+            </button></li>
+            <li data-extra hidden><button type="button" class="receipt" data-full="/assets/img/wall/31.webp" data-caption="mohrah0402 · +6.54% day, still green · Jul 30">
+              <img src="/assets/img/wall/31.webp" alt="mohrah0402 posted +6.54% (day, still green) in the StockHours profits chat, Jul 30" width="720" height="575" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+6.54%</b> <span>day, still green</span> <i>mohrah0402 · Jul 30</i></span>
+            </button></li>
+            <li data-extra hidden><button type="button" class="receipt" data-full="/assets/img/wall/43.webp" data-caption="Solotrades · +3.59% day, SH4L target hit · Jul 30">
+              <img src="/assets/img/wall/43.webp" alt="Solotrades posted +3.59% (day, SH4L target hit) in the StockHours profits chat, Jul 30" width="720" height="575" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+3.59%</b> <span>day, SH4L target hit</span> <i>Solotrades · Jul 30</i></span>
+            </button></li>
+            <li data-extra hidden><button type="button" class="receipt" data-full="/assets/img/wall/26.webp" data-caption="Lilg · +$54 NVDA call · Jul 31">
+              <img src="/assets/img/wall/26.webp" alt="Lilg posted +$54 (NVDA call) in the StockHours profits chat, Jul 31" width="720" height="490" loading="lazy" decoding="async" />
+              <span class="receipt__cap"><b>+$54</b> <span>NVDA call</span> <i>Lilg · Jul 31</i></span>
+            </button></li>
+          </ul>
+          <div class="center">
+            <button type="button" class="btn btn--ghost" data-show-more>See all 24 receipts</button>
+          </div>
+
+          <div class="head head--sub">
+            <h3 class="h3">In their own words.</h3>
+          </div>
+          <ul class="quotes">
+            <li><button type="button" class="quote" data-full="/assets/img/testimonials/antonio.webp" data-caption="Antonio P. · Hit $50k/month for the first time">
+              <img src="/assets/img/testimonials/antonio.webp" alt="Antonio P. · Hit $50k/month for the first time" width="720" height="793" loading="lazy" decoding="async" />
+              <span class="quote__cap"><b>Antonio P.</b> · Hit $50k/month for the first time</span>
+            </button></li>
+            <li><button type="button" class="quote" data-full="/assets/img/testimonials/xesar16.webp" data-caption="Xesar16 · Hit the $70k mark">
+              <img src="/assets/img/testimonials/xesar16.webp" alt="Xesar16 · Hit the $70k mark" width="720" height="804" loading="lazy" decoding="async" />
+              <span class="quote__cap"><b>Xesar16</b> · Hit the $70k mark</span>
+            </button></li>
+            <li><button type="button" class="quote" data-full="/assets/img/testimonials/adam.webp" data-caption="Adam · Took out his initial investment after a 140% run in 2025">
+              <img src="/assets/img/testimonials/adam.webp" alt="Adam · Took out his initial investment after a 140% run in 2025" width="720" height="423" loading="lazy" decoding="async" />
+              <span class="quote__cap"><b>Adam</b> · Took out his initial investment after a 140% run in 2025</span>
+            </button></li>
+            <li><button type="button" class="quote" data-full="/assets/img/testimonials/roccoscalps.webp" data-caption="RoccoScalps · First profitable year after 6 years">
+              <img src="/assets/img/testimonials/roccoscalps.webp" alt="RoccoScalps · First profitable year after 6 years" width="720" height="725" loading="lazy" decoding="async" />
+              <span class="quote__cap"><b>RoccoScalps</b> · First profitable year after 6 years</span>
+            </button></li>
+            <li><button type="button" class="quote" data-full="/assets/img/testimonials/brev.webp" data-caption="Brev · Found consistency with StockHours and Nour">
+              <img src="/assets/img/testimonials/brev.webp" alt="Brev · Found consistency with StockHours and Nour" width="720" height="934" loading="lazy" decoding="async" />
+              <span class="quote__cap"><b>Brev</b> · Found consistency with StockHours and Nour</span>
+            </button></li>
+            <li><button type="button" class="quote" data-full="/assets/img/testimonials/mike.webp" data-caption="Mike · StockHours member">
+              <img src="/assets/img/testimonials/mike.webp" alt="Mike · StockHours member" width="720" height="772" loading="lazy" decoding="async" />
+              <span class="quote__cap"><b>Mike</b></span>
+            </button></li>
+            <li><button type="button" class="quote" data-full="/assets/img/testimonials/solo.webp" data-caption="Solo · StockHours member">
+              <img src="/assets/img/testimonials/solo.webp" alt="Solo · StockHours member" width="720" height="839" loading="lazy" decoding="async" />
+              <span class="quote__cap"><b>Solo</b></span>
+            </button></li>
+            <li><button type="button" class="quote" data-full="/assets/img/testimonials/frankie.webp" data-caption="Frankie · StockHours member">
+              <img src="/assets/img/testimonials/frankie.webp" alt="Frankie · StockHours member" width="720" height="589" loading="lazy" decoding="async" />
+              <span class="quote__cap"><b>Frankie</b></span>
+            </button></li>
+            <li><button type="button" class="quote" data-full="/assets/img/testimonials/wadah.webp" data-caption="Wadah · StockHours member">
+              <img src="/assets/img/testimonials/wadah.webp" alt="Wadah · StockHours member" width="720" height="656" loading="lazy" decoding="async" />
+              <span class="quote__cap"><b>Wadah</b></span>
+            </button></li>
+            <li><button type="button" class="quote" data-full="/assets/img/testimonials/antttoo.webp" data-caption="Antttoo · StockHours member">
+              <img src="/assets/img/testimonials/antttoo.webp" alt="Antttoo · StockHours member" width="720" height="970" loading="lazy" decoding="async" />
+              <span class="quote__cap"><b>Antttoo</b></span>
+            </button></li>
+            <li><button type="button" class="quote" data-full="/assets/img/testimonials/ybtrades.webp" data-caption="YBTrades · StockHours member">
+              <img src="/assets/img/testimonials/ybtrades.webp" alt="YBTrades · StockHours member" width="720" height="736" loading="lazy" decoding="async" />
+              <span class="quote__cap"><b>YBTrades</b></span>
+            </button></li>
+            <li><button type="button" class="quote" data-full="/assets/img/testimonials/za.webp" data-caption="Za · StockHours member">
+              <img src="/assets/img/testimonials/za.webp" alt="Za · StockHours member" width="720" height="492" loading="lazy" decoding="async" />
+              <span class="quote__cap"><b>Za</b></span>
+            </button></li>
+          </ul>
+          <p class="fine">Results are not typical and reflect individual experiences. Not every trade wins. Full disclosure at the bottom of the page.</p>
+        </div>
+      </section>
+
+      <!-- ======================= NOUR ======================= -->
+      <section class="block" id="nour">
+        <div class="wrap">
+          <div class="head">
+            <h2 class="h2">The youngest kid on Wall Street.</h2>
+            <p>Nour became known as the youngest kid on Wall Street at 16. He has stood on the floor of the New York Stock Exchange with Peter Tuchman, the “Einstein of Wall Street”, and spoken at the Nasdaq. Every market day, he posts his trades live in the Signals Chat.</p>
+          </div>
+          <div class="photos">
+            <figure class="photo photo--a">
+              <img src="/assets/img/photos/nyse-tuchman.webp" alt="Nour with Peter Tuchman on the floor of the New York Stock Exchange" width="900" height="1349" loading="lazy" decoding="async" />
+              <figcaption>with Peter Tuchman, NYSE floor</figcaption>
+            </figure>
+            <figure class="photo photo--b">
+              <img src="/assets/img/photos/nyse-bell.webp" alt="Nour at the New York Stock Exchange golden bell" width="1000" height="667" loading="lazy" decoding="async" />
+              <figcaption>the NYSE bell</figcaption>
+            </figure>
+            <figure class="photo photo--c">
+              <img src="/assets/img/photos/nasdaq.webp" alt="Nour speaking at the Nasdaq podium" width="900" height="1350" loading="lazy" decoding="async" />
+              <figcaption>on stage at the Nasdaq</figcaption>
+            </figure>
+            <figure class="photo photo--d">
+              <img src="/assets/img/photos/students.webp" alt="Nour with a large group of StockHours students at a live meetup" width="1200" height="800" loading="lazy" decoding="async" />
+              <figcaption>StockHours students, in person</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= VS ======================= -->
+      <section class="block block--alt" id="compare">
+        <div class="wrap">
+          <div class="head head--center">
+            <h2 class="h2">Same market. <span class="mark">Different seat.</span></h2>
+            <p>You're already watching the tickers. The difference is whether you see the setup before the move or after it.</p>
+          </div>
+          <div class="vs">
+            <div class="vs__side">
+              <h3>Trading on your own</h3>
+              <ul class="x-list">
+                <li>You find out about the move after it happens</li>
+                <li>You guess at the entry and hope on the exit</li>
+                <li>No stop, so one bad trade wipes out a good week</li>
+                <li>Nobody to ask when a setup doesn't make sense</li>
               </ul>
             </div>
-
-            <div class="slip-stack" aria-hidden="true">
-              <img class="slip-stack__img slip-stack__img--a" src="/assets/img/wall/62.webp" alt="" width="720" height="629" />
-              <img class="slip-stack__img slip-stack__img--b" src="/assets/img/wall/208.webp" alt="" width="720" height="606" />
-              <img class="slip-stack__img slip-stack__img--c" src="/assets/img/wall/149.webp" alt="" width="667" height="557" fetchpriority="high" />
-              <div class="chip chip--odds">
-                <span class="chip__label">Every signal</span>
-                <span class="chip__value">Entry · Target · Stop</span>
-              </div>
-              <div class="chip chip--win">
-                <span class="chip__label">Posted in the chat</span>
-                <span class="chip__value money">+$5,891.77 today</span>
-              </div>
+            <div class="vs__or" aria-hidden="true">vs</div>
+            <div class="vs__side vs__side--win">
+              <span class="note note--vs" aria-hidden="true">what members do</span>
+              <h3>Inside StockHours</h3>
+              <ul class="check-list">
+                <li><b>Every morning:</b> pre-market analysis over voice, plus trade ideas written straight into the Discord.</li>
+                <li><b>All day:</b> live signals from Nour and Maki (who loves to trade SPY), with the exact entry, target and stop.</li>
+                <li><b>Every night at 8pm ET:</b> a live lesson on charting or trading vocabulary, always finished with a Q&amp;A.</li>
+                <li><b>Through the trading day:</b> option flow and important news piped straight into the Discord.</li>
+              </ul>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- ============ STATS ============ -->
-        <section class="section--tight" aria-label="StockHours by the numbers">
-          <div class="container">
-            <div class="panel panel--lit stats reveal">
-              <div class="stat">
-                <div class="stat__value gold-text">4.9★</div>
-                <div class="stat__label">Rating on Whop</div>
-              </div>
-              <div class="stats__arrow" aria-hidden="true">·</div>
-              <div class="stat">
-                <div class="stat__value" data-count="729">729</div>
-                <div class="stat__label">Member reviews</div>
-              </div>
-              <div class="stats__arrow" aria-hidden="true">·</div>
-              <div class="stat">
-                <div class="stat__value money">LIVE</div>
-                <div class="stat__label">Every market day</div>
-              </div>
-              <p class="prose-body stats__note">real-time alerts from Nour during market hours, with his conviction on every trade 👇</p>
-            </div>
+      <!-- ======================= STEPS ======================= -->
+      <section class="block" id="how">
+        <div class="wrap">
+          <div class="head">
+            <h2 class="h2">You could be in before the next open.</h2>
           </div>
-        </section>
-
-        <!-- ============ RESULTS ============ -->
-        <section class="section" id="results">
-          <div class="container">
-            <div class="section__head reveal">
-              <p class="eyebrow">📸 Profits posted in the chat</p>
-              <h2 class="display display--lg">The receipts are <span class="gold-text">in the chat.</span></h2>
-              <p class="prose-body">pulled straight from the StockHours community. members post their wins every day. tap any screenshot to see it full size.</p>
-            </div>
+          <ol class="steps">
+            <li>
+              <h3>Pick your plan.</h3>
+              <p>Signals or the VIP Bundle, monthly or 3 months. Checkout takes about a minute, right here in Whop.</p>
+            </li>
+            <li>
+              <h3>Channels unlock.</h3>
+              <p>The Signals Chat shows up in your Whop sidebar the second you check out. Turn on notifications so you never miss an alert.</p>
+            </li>
+            <li>
+              <h3>Trade alongside Nour.</h3>
+              <p>Catch the pre-market watchlist, follow the entries, targets and stops, and size your own risk.</p>
+            </li>
+          </ol>
+          <div class="center">
+            <a class="btn btn--xl" href="#join">Pick my plan <span class="btn__arrow" aria-hidden="true">→</span></a>
           </div>
+        </div>
+      </section>
 
-          <div class="marquee" style="--marquee-dur: 90s">
-            <div class="marquee__track">
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/149.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/149.webp" alt="StockHours member profit screenshot from the community chat" width="667" height="557" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/195.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/195.webp" alt="StockHours member profit screenshot from the community chat" width="720" height="604" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/62.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/62.webp" alt="StockHours member profit screenshot from the community chat" width="720" height="629" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/8.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/8.webp" alt="StockHours member profit screenshot from the community chat" width="616" height="580" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/214.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/214.webp" alt="StockHours member profit screenshot from the community chat" width="677" height="640" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/100.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/100.webp" alt="StockHours member profit screenshot from the community chat" width="592" height="582" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/236.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/236.webp" alt="StockHours member profit screenshot from the community chat" width="720" height="571" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/306.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/306.webp" alt="StockHours member profit screenshot from the community chat" width="720" height="588" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/134.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/134.webp" alt="StockHours member profit screenshot from the community chat" width="720" height="520" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/21.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/21.webp" alt="StockHours member profit screenshot from the community chat" width="717" height="542" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/73.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/73.webp" alt="StockHours member profit screenshot from the community chat" width="720" height="594" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/287.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/287.webp" alt="StockHours member profit screenshot from the community chat" width="720" height="586" loading="lazy" decoding="async" />
-              </button>
-            </div>
+      <!-- ======================= PLANS ======================= -->
+      <section class="block block--alt" id="join">
+        <div class="wrap">
+          <div class="head head--center">
+            <h2 class="h2">Build your membership.</h2>
+            <p>Start with the Signals Chat. Add the Algo for the VIP Bundle, or lock in 3 months to save.</p>
           </div>
 
-          <div class="marquee marquee--reverse" style="--marquee-dur: 80s">
-            <div class="marquee__track">
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/208.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/208.webp" alt="StockHours member profit screenshot from the community chat" width="720" height="606" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/211.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/211.webp" alt="StockHours member profit screenshot from the community chat" width="720" height="614" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/70.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/70.webp" alt="StockHours member profit screenshot from the community chat" width="720" height="581" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/31.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/31.webp" alt="StockHours member profit screenshot from the community chat" width="720" height="575" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/43.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/43.webp" alt="StockHours member profit screenshot from the community chat" width="720" height="575" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/328.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/328.webp" alt="StockHours member profit screenshot from the community chat" width="720" height="595" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/308.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/308.webp" alt="StockHours member profit screenshot from the community chat" width="720" height="598" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/218.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/218.webp" alt="StockHours member profit screenshot from the community chat" width="720" height="521" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/6.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/6.webp" alt="StockHours member profit screenshot from the community chat" width="720" height="544" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/33.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/33.webp" alt="StockHours member profit screenshot from the community chat" width="720" height="562" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/68.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/68.webp" alt="StockHours member profit screenshot from the community chat" width="720" height="503" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="slip slip--shot" data-full="/assets/img/wall/26.webp" data-caption="Posted in the StockHours profits chat">
-                <img src="/assets/img/wall/26.webp" alt="StockHours member profit screenshot from the community chat" width="720" height="490" loading="lazy" decoding="async" />
-              </button>
-            </div>
-          </div>
-
-          <div class="container">
-            <p class="prose-body receipts__note reveal">results are not typical and reflect individual experiences. not every trade wins. see the full disclosure at the bottom.</p>
-          </div>
-        </section>
-
-        <hr class="rule-gold" />
-
-        <!-- ============ WALL STREET ============ -->
-        <section class="section" id="nour">
-          <div class="container">
-            <div class="section__head reveal">
-              <p class="eyebrow">🏛️ Recognized on Wall Street</p>
-              <h2 class="display display--lg">The youngest kid <span class="gold-text">on Wall Street.</span></h2>
-              <p class="prose-body">from the Nasdaq to the New York Stock Exchange, and the students learning alongside Nour every day.</p>
-            </div>
-            <div class="photos">
-              <figure class="photo photo--tall reveal">
-                <img src="/assets/img/photos/nyse-tuchman.webp" alt="Nour with Peter Tuchman, the Einstein of Wall Street, on the floor of the New York Stock Exchange" width="900" height="1349" loading="lazy" decoding="async" />
-                <figcaption>With Peter Tuchman, the “Einstein of Wall Street”, at the NYSE</figcaption>
-              </figure>
-              <figure class="photo reveal">
-                <img src="/assets/img/photos/nyse-bell.webp" alt="Nour at the New York Stock Exchange golden bell" width="1000" height="667" loading="lazy" decoding="async" />
-                <figcaption>At the New York Stock Exchange</figcaption>
-              </figure>
-              <figure class="photo photo--tall reveal">
-                <img src="/assets/img/photos/nasdaq.webp" alt="Nour speaking at the Nasdaq podium" width="900" height="1350" loading="lazy" decoding="async" />
-                <figcaption>Nour at the Nasdaq</figcaption>
-              </figure>
-              <figure class="photo reveal">
-                <img src="/assets/img/photos/students.webp" alt="Nour with a large group of StockHours students at a live meetup" width="1200" height="800" loading="lazy" decoding="async" />
-                <figcaption>Nour with StockHours students</figcaption>
-              </figure>
-            </div>
-          </div>
-        </section>
-
-        <!-- ============ WHAT YOU GET ============ -->
-        <section class="section" id="inside">
-          <div class="container">
-            <div class="section__head reveal">
-              <p class="eyebrow">💰 What's inside</p>
-              <h2 class="display display--lg">Two ways in. <span class="gold-text">One room.</span></h2>
-              <p class="prose-body">the free Discord gets you in the door. the Signals Chat is where Nour's trades drop live. the VIP Bundle adds the exact algorithm he runs on his charts.</p>
-            </div>
-
-            <div class="cappers">
-              <article class="panel capper reveal">
-                <div class="capper__head">
-                  <img class="capper__avatar" src="/assets/img/logo.webp" alt="" width="52" height="52" loading="lazy" />
-                  <div>
-                    <h3 class="display display--md">Signals Chat</h3>
-                    <div class="capper__role">From $249/mo</div>
-                  </div>
-                </div>
-                <p class="prose-body">live signals from Nour during market hours. every alert comes with a clear entry, target, stop, and his conviction.</p>
-                <ul class="channels">
-                  <li class="channel"><span class="channel__icon" aria-hidden="true">LIVE</span><span class="channel__name">Live trade alerts<span class="channel__desc">real-time signals as setups trigger.</span></span><span class="channel__lock" aria-label="included">🔓</span></li>
-                  <li class="channel"><span class="channel__icon" aria-hidden="true">E/T/S</span><span class="channel__name">Entry, target &amp; stop<span class="channel__desc">plus a heads-up before the trade and Nour's conviction.</span></span><span class="channel__lock" aria-label="included">🔓</span></li>
-                  <li class="channel"><span class="channel__icon" aria-hidden="true">CHAT</span><span class="channel__name">Full chat access<span class="channel__desc">stocks-chat, profits-chat, question area, trade ideas &amp; newsbot.</span></span><span class="channel__lock" aria-label="included">🔓</span></li>
-                </ul>
-              </article>
-
-              <article class="panel capper capper--vip reveal">
-                <div class="capper__head">
-                  <img class="capper__avatar" src="/assets/img/logo.webp" alt="" width="52" height="52" loading="lazy" />
-                  <div>
-                    <h3 class="display display--md">VIP Bundle</h3>
-                    <div class="capper__role">Signals + Algo · from $275/mo</div>
-                  </div>
-                </div>
-                <p class="prose-body">everything in the Signals Chat, plus Nour's TradingView algorithm. the same tool he runs every day, normally $49/mo on its own.</p>
-                <ul class="channels">
-                  <li class="channel"><span class="channel__icon" aria-hidden="true">SIG</span><span class="channel__name">Everything in Signals<span class="channel__desc">live alerts, entries, targets, stops and full chat.</span></span><span class="channel__lock" aria-label="included">🔓</span></li>
-                  <li class="channel"><span class="channel__icon" aria-hidden="true">ALGO</span><span class="channel__name">Nour's TradingView algo<span class="channel__desc">the exact tool Nour runs on his charts daily.</span></span><span class="channel__lock" aria-label="included">🔓</span></li>
-                  <li class="channel"><span class="channel__icon" aria-hidden="true">SAVE</span><span class="channel__name">Bundle pricing<span class="channel__desc">+$26/mo over Signals, instead of $49/mo separately.</span></span><span class="channel__lock" aria-label="included">🔓</span></li>
-                </ul>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <!-- ============ COMPARE ============ -->
-        <section class="section section--tight" id="compare">
-          <div class="container">
-            <div class="section__head section__head--center reveal">
-              <p class="eyebrow">🔓 Free vs paid</p>
-              <h2 class="display display--lg">Free gets you learning. <span class="gold-text">Signals get you the trades.</span></h2>
-            </div>
-
-            <div class="panel compare compare--3 reveal">
-              <table>
+          <div class="join">
+            <div class="table-wrap">
+              <table class="compare">
                 <thead>
                   <tr>
-                    <th scope="col"><span class="sr-only">What's included</span></th>
+                    <th scope="col"><span class="sr">What's included</span></th>
                     <th scope="col">Free</th>
-                    <th scope="col" class="col-premium">Signals</th>
-                    <th scope="col" class="col-premium">VIP</th>
+                    <th scope="col" class="is-pick"><span class="pick-tag">most members</span>Signals</th>
+                    <th scope="col">VIP</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">Live morning trade stream</th>
-                    <td><span class="yes" aria-label="Included">✓</span></td>
-                    <td class="col-premium"><span class="yes" aria-label="Included">✓</span></td>
-                    <td class="col-premium"><span class="yes" aria-label="Included">✓</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Pre-market review &amp; watchlist</th>
-                    <td><span class="yes" aria-label="Included">✓</span></td>
-                    <td class="col-premium"><span class="yes" aria-label="Included">✓</span></td>
-                    <td class="col-premium"><span class="yes" aria-label="Included">✓</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Funded-account giveaways &amp; starter lessons</th>
-                    <td><span class="yes" aria-label="Included">✓</span></td>
-                    <td class="col-premium"><span class="yes" aria-label="Included">✓</span></td>
-                    <td class="col-premium"><span class="yes" aria-label="Included">✓</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Live trade alerts from Nour</th>
-                    <td><span class="no" aria-label="Not included">—</span></td>
-                    <td class="col-premium"><span class="yes" aria-label="Included">✓</span></td>
-                    <td class="col-premium"><span class="yes" aria-label="Included">✓</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Entry, target &amp; stop on every signal</th>
-                    <td><span class="no" aria-label="Not included">—</span></td>
-                    <td class="col-premium"><span class="yes" aria-label="Included">✓</span></td>
-                    <td class="col-premium"><span class="yes" aria-label="Included">✓</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Full signals chat</th>
-                    <td><span class="no" aria-label="Not included">—</span></td>
-                    <td class="col-premium"><span class="yes" aria-label="Included">✓</span></td>
-                    <td class="col-premium"><span class="yes" aria-label="Included">✓</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Nour's TradingView algorithm</th>
-                    <td><span class="no" aria-label="Not included">—</span></td>
-                    <td class="col-premium"><span class="no" aria-label="Not included">—</span></td>
-                    <td class="col-premium"><span class="yes" aria-label="Included">✓</span></td>
-                  </tr>
-                  <tr class="compare__price">
-                    <th scope="row">Price</th>
-                    <td>$0</td>
-                    <td class="col-premium">$249/mo</td>
-                    <td class="col-premium">$275/mo</td>
-                  </tr>
+                  <tr><th scope="row">Live morning trade stream</th><td><span class="y">✓</span></td><td class="is-pick"><span class="y">✓</span></td><td><span class="y">✓</span></td></tr>
+                  <tr><th scope="row">Pre-market review &amp; watchlist</th><td><span class="y">✓</span></td><td class="is-pick"><span class="y">✓</span></td><td><span class="y">✓</span></td></tr>
+                  <tr><th scope="row">Live trade alerts from Nour</th><td><span class="n" aria-label="Not included">✕</span></td><td class="is-pick"><span class="y">✓</span></td><td><span class="y">✓</span></td></tr>
+                  <tr><th scope="row">Entry, target &amp; stop on every signal</th><td><span class="n" aria-label="Not included">✕</span></td><td class="is-pick"><span class="y">✓</span></td><td><span class="y">✓</span></td></tr>
+                  <tr><th scope="row">Full signals chat</th><td><span class="n" aria-label="Not included">✕</span></td><td class="is-pick"><span class="y">✓</span></td><td><span class="y">✓</span></td></tr>
+                  <tr><th scope="row">Nour's TradingView algorithm</th><td><span class="n" aria-label="Not included">✕</span></td><td class="is-pick"><span class="n" aria-label="Not included">✕</span></td><td><span class="y">✓</span></td></tr>
+                  <tr class="compare__price"><th scope="row">Monthly</th><td>$0</td><td class="is-pick">$249</td><td>$275</td></tr>
+                  <tr class="compare__price"><th scope="row">3 months, one payment</th><td>—</td><td class="is-pick">$499.99</td><td>$549.99</td></tr>
                 </tbody>
               </table>
             </div>
-          </div>
-        </section>
 
-        <hr class="rule-gold" />
-
-        <!-- ============ PLAN BUILDER (all plans + upsells) ============ -->
-        <section class="section" id="join">
-          <div class="container">
-            <div class="section__head section__head--center reveal">
-              <p class="eyebrow">🔒 Signals Chat membership</p>
-              <h2 class="display display--lg">Build your <span class="gold-text">membership.</span></h2>
-              <p class="prose-body">start with the Signals Chat, add the Algo for the VIP Bundle, and lock in 3 months to save.</p>
-            </div>
-
-            <div class="builder" data-builder>
-              <div class="holo builder__card reveal" data-holo>
-                <div class="holo__foil" aria-hidden="true"></div>
-                <div class="holo__glare" aria-hidden="true"></div>
-                <div class="holo__content">
-                  <p class="eyebrow" data-b="eyebrow">Signals Chat</p>
-                  <div class="offer__price">
-                    <span class="offer__amount" data-b="price">$249</span>
-                    <span class="offer__per" data-b="per">/month</span>
-                  </div>
-                  <p class="prose-body offer__terms" data-b="terms">Cancel anytime, no contract</p>
-                  <p class="sr-only" aria-live="polite" data-b="live"></p>
-
-                  <button type="button" class="upsell" aria-pressed="false" data-toggle="algo" aria-label="Add the Algo (upgrade to the VIP Bundle)">
-                    <span class="upsell__box" aria-hidden="true">✓</span>
-                    <span class="upsell__text">
-                      <span class="upsell__title" data-b="algo-title">Add the Algo · +$26/month</span>
-                      <span class="upsell__body" data-b="algo-body">Same algorithm Nour runs daily. Normally $49/mo on its own.</span>
-                    </span>
-                    <span class="upsell__tag">VIP</span>
-                  </button>
-
-                  <button type="button" class="upsell" aria-pressed="false" data-toggle="quarterly" aria-label="Switch to the 3-month plan">
-                    <span class="upsell__box" aria-hidden="true">✓</span>
-                    <span class="upsell__text">
-                      <span class="upsell__title" data-b="q-title">Make it 3 months · Save $247</span>
-                      <span class="upsell__body" data-b="q-body">One payment of $499.99 instead of $747 at the monthly rate.</span>
-                    </span>
-                    <span class="upsell__tag">Save</span>
-                  </button>
-
-                  <a class="cta cta--lg cta--block builder__cta" href="https://whop.com/checkout/plan_mNqOeTtQdUwdI" target="_blank" rel="noreferrer" data-checkout="plan_mNqOeTtQdUwdI" id="offer-cta">
-                    <span data-b="cta">Join the Signals Chat</span>
-                  </a>
-                  <p class="offer__trust"><b>★ 4.9</b> on Whop · 729 reviews · secure checkout by Whop</p>
-                  <ul class="paybadges" aria-label="Payment methods">
-                    <li>Visa</li><li>Mastercard</li><li>Apple Pay</li><li>Google Pay</li>
-                  </ul>
-                </div>
+            <div class="offer" data-builder>
+              <p class="offer__eyebrow" data-b="eyebrow">Signals Chat</p>
+              <div class="offer__price">
+                <span class="offer__amount" data-b="price">$249</span>
+                <span class="offer__per" data-b="per">/month</span>
               </div>
+              <p class="offer__terms" data-b="terms">Cancel anytime, no contract</p>
+              <p class="sr" aria-live="polite" data-b="live"></p>
 
-              <div class="builder__side reveal">
-                <img class="builder__img" data-b="img" src="/assets/img/signals-membership.webp" alt="StockHours Signals Chat Membership. Live trade alerts from Nour during market hours with clear entries, targets, and stops, plus full chat access." width="1200" height="675" loading="lazy" decoding="async" />
-                <h3 class="display display--md builder__h">Here's what you'll get</h3>
-                <ul class="checklist">
-                  <li><span><b>Live trade alerts during market hours</b><br /><span class="dim">real-time signals from Nour as setups trigger.</span></span></li>
-                  <li><span><b>Entry, target &amp; stop on every signal</b><br /><span class="dim">plus a heads-up before the trade and Nour's conviction.</span></span></li>
-                  <li><span><b>Full chat access</b><br /><span class="dim">stocks-chat, profits-chat, question area, trade ideas &amp; newsbot.</span></span></li>
-                  <li class="is-algo" data-b="algo-item" hidden><span><b>Nour's TradingView algorithm</b><br /><span class="dim">the exact tool Nour runs every day. included with the VIP Bundle.</span></span></li>
-                </ul>
-                <p class="fine-print">signals are for educational purposes and are not financial advice. trade at your own risk.</p>
-              </div>
-            </div>
+              <button type="button" class="upsell" aria-pressed="false" data-toggle="algo" aria-label="Add the Algo (upgrade to the VIP Bundle)">
+                <span class="upsell__box" aria-hidden="true">✓</span>
+                <span class="upsell__text">
+                  <span class="upsell__title" data-b="algo-title">Add the Algo · +$26/month</span>
+                  <span class="upsell__body" data-b="algo-body">Same algorithm Nour runs daily. Normally $49/mo on its own.</span>
+                </span>
+                <span class="upsell__tag">VIP</span>
+              </button>
 
-            <!-- every plan, one tap away -->
-            <div class="plans reveal" aria-label="All plans">
-              <a class="plan" href="https://whop.com/checkout/plan_mNqOeTtQdUwdI" target="_blank" rel="noreferrer" data-checkout="plan_mNqOeTtQdUwdI">
-                <span class="plan__name">Signals · Monthly</span>
-                <span class="plan__price">$249<small>/mo</small></span>
-                <span class="plan__note">cancel anytime</span>
-              </a>
-              <a class="plan" href="https://whop.com/checkout/plan_rJGyBGGeKU3xL" target="_blank" rel="noreferrer" data-checkout="plan_rJGyBGGeKU3xL">
-                <span class="plan__badge">Save $247</span>
-                <span class="plan__name">Signals · 3 months</span>
-                <span class="plan__price">$499.99<small>/3 mo</small></span>
-                <span class="plan__note">one payment</span>
-              </a>
-              <a class="plan plan--vip" href="https://whop.com/checkout/plan_gSHcTOO8Tepwk" target="_blank" rel="noreferrer" data-checkout="plan_gSHcTOO8Tepwk">
-                <span class="plan__name">VIP Bundle · Monthly</span>
-                <span class="plan__price">$275<small>/mo</small></span>
-                <span class="plan__note">signals + algo</span>
-              </a>
-              <a class="plan plan--vip" href="https://whop.com/checkout/plan_ZRJSPKXw7ttxY" target="_blank" rel="noreferrer" data-checkout="plan_ZRJSPKXw7ttxY">
-                <span class="plan__badge">Best value</span>
-                <span class="plan__name">VIP Bundle · 3 months</span>
-                <span class="plan__price">$549.99<small>/3 mo</small></span>
-                <span class="plan__note">signals + algo · save $275</span>
-              </a>
-            </div>
-          </div>
-        </section>
+              <button type="button" class="upsell" aria-pressed="false" data-toggle="quarterly" aria-label="Switch to the 3-month plan">
+                <span class="upsell__box" aria-hidden="true">✓</span>
+                <span class="upsell__text">
+                  <span class="upsell__title" data-b="q-title">Make it 3 months · Save $247</span>
+                  <span class="upsell__body" data-b="q-body">One payment of $499.99 instead of $747 at the monthly rate.</span>
+                </span>
+                <span class="upsell__tag">Save</span>
+              </button>
 
-        <!-- ============ HOW IT WORKS ============ -->
-        <section class="section section--tight" id="how">
-          <div class="container">
-            <div class="section__head reveal">
-              <p class="eyebrow">⚡ How it works</p>
-              <h2 class="display display--lg">Three steps. That's it.</h2>
-            </div>
-            <ol class="steps">
-              <li class="panel step reveal">
-                <span class="step__num gold-text">01</span>
-                <h3 class="display display--md">Pick your plan</h3>
-                <p class="prose-body">Signals or the VIP Bundle, monthly or 3 months. checkout takes a minute.</p>
-              </li>
-              <li class="panel step reveal">
-                <span class="step__num gold-text">02</span>
-                <h3 class="display display--md">Channels unlock</h3>
-                <p class="prose-body">the signals chat shows up in your Whop sidebar the second you check out. turn on notifications 🔔 so you never miss an alert.</p>
-              </li>
-              <li class="panel step reveal">
-                <span class="step__num gold-text">03</span>
-                <h3 class="display display--md">Trade alongside Nour</h3>
-                <p class="prose-body">catch the pre-market watchlist, follow the entries, targets and stops, and size your own risk.</p>
-              </li>
-            </ol>
-          </div>
-        </section>
-
-        <!-- ============ MEMBERS ============ -->
-        <section class="section" id="members">
-          <div class="container">
-            <div class="section__head reveal">
-              <p class="eyebrow">🗣️ Real members</p>
-              <h2 class="display display--lg">Real members. <span class="gold-text">Real results.</span></h2>
-              <p class="prose-body">members sharing their progress inside StockHours. tap any one to read it full size.</p>
-            </div>
-            <div class="wall">
-              <button type="button" class="testi reveal" data-full="/assets/img/testimonials/antonio.webp" data-caption="Antonio P. — hit $50k/month for the first time">
-                <img src="/assets/img/testimonials/antonio.webp" alt="Antonio P. — hit $50k/month for the first time" width="720" height="793" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="testi reveal" data-full="/assets/img/testimonials/roccoscalps.webp" data-caption="RoccoScalps — first profitable year after 6 years">
-                <img src="/assets/img/testimonials/roccoscalps.webp" alt="RoccoScalps — first profitable year after 6 years" width="720" height="725" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="testi reveal" data-full="/assets/img/testimonials/adam.webp" data-caption="Adam — took out his initial investment after a 140% run in 2025">
-                <img src="/assets/img/testimonials/adam.webp" alt="Adam — took out his initial investment after a 140% run in 2025" width="720" height="423" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="testi reveal" data-full="/assets/img/testimonials/xesar16.webp" data-caption="Xesar16 — hit the $70k mark">
-                <img src="/assets/img/testimonials/xesar16.webp" alt="Xesar16 — hit the $70k mark" width="720" height="804" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="testi reveal" data-full="/assets/img/testimonials/brev.webp" data-caption="Brev — found consistency with StockHours and Nour">
-                <img src="/assets/img/testimonials/brev.webp" alt="Brev — found consistency with StockHours and Nour" width="720" height="934" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="testi reveal" data-full="/assets/img/testimonials/mike.webp" data-caption="Mike — StockHours member">
-                <img src="/assets/img/testimonials/mike.webp" alt="Mike — StockHours member" width="720" height="772" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="testi reveal" data-full="/assets/img/testimonials/solo.webp" data-caption="Solo — StockHours member">
-                <img src="/assets/img/testimonials/solo.webp" alt="Solo — StockHours member" width="720" height="839" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="testi reveal" data-full="/assets/img/testimonials/frankie.webp" data-caption="Frankie — StockHours member">
-                <img src="/assets/img/testimonials/frankie.webp" alt="Frankie — StockHours member" width="720" height="589" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="testi reveal" data-full="/assets/img/testimonials/wadah.webp" data-caption="Wadah — StockHours member">
-                <img src="/assets/img/testimonials/wadah.webp" alt="Wadah — StockHours member" width="720" height="656" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="testi reveal" data-full="/assets/img/testimonials/antttoo.webp" data-caption="Antttoo — StockHours member">
-                <img src="/assets/img/testimonials/antttoo.webp" alt="Antttoo — StockHours member" width="720" height="970" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="testi reveal" data-full="/assets/img/testimonials/ybtrades.webp" data-caption="YBTrades — StockHours member">
-                <img src="/assets/img/testimonials/ybtrades.webp" alt="YBTrades — StockHours member" width="720" height="736" loading="lazy" decoding="async" />
-              </button>
-              <button type="button" class="testi reveal" data-full="/assets/img/testimonials/za.webp" data-caption="Za — StockHours member">
-                <img src="/assets/img/testimonials/za.webp" alt="Za — StockHours member" width="720" height="492" loading="lazy" decoding="async" />
-              </button>
-            </div>
-            <p class="prose-body receipts__note reveal">results are not typical and reflect individual experiences. see the full disclosure below.</p>
-          </div>
-        </section>
-
-        <hr class="rule-gold" />
-
-        <!-- ============ VANQUISH TRADER ============ -->
-        <section class="section" id="funded">
-          <div class="container">
-            <div class="panel panel--lit vq reveal">
-              <div class="vq__copy">
-                <p class="eyebrow">🏦 Partner offer · Vanquish Trader</p>
-                <h2 class="display display--lg">Trade options. <span class="gold-text">Get funded.</span></h2>
-                <div class="vq__stats">
-                  <span class="pill">accounts up to <b>$150K</b></span>
-                  <span class="pill">keep <b>100%</b> of your profits</span>
-                  <span class="pill"><b>daily</b> payouts</span>
-                </div>
-                <p class="prose-body">take Nour's signals to a funded account. Vanquish is the options prop firm: calls, puts and spreads on their capital. pass the evaluation and get paid. use code <b class="code-inline">NOUR</b> at checkout for a discount.</p>
-                <div class="vq__plans">
-                  <div class="vq__plan">
-                    <span class="vq__plan-name">Options</span>
-                    <span class="vq__plan-desc">long calls &amp; puts. the classic evaluation. 10% target.</span>
-                    <span class="vq__plan-price">from <b>$99</b>/mo</span>
-                  </div>
-                  <div class="vq__plan">
-                    <span class="vq__plan-name">Rapid Options <em>New</em></span>
-                    <span class="vq__plan-desc">pass on day one. no consistency rule.</span>
-                    <span class="vq__plan-price">from <b>$79</b>/mo</span>
-                  </div>
-                  <div class="vq__plan">
-                    <span class="vq__plan-name">Advanced Options</span>
-                    <span class="vq__plan-desc">level 4: spreads &amp; selling to open. EOD drawdown.</span>
-                    <span class="vq__plan-price">from <b>$199</b>/mo</span>
-                  </div>
-                </div>
-                <p class="fine-print">prices are Vanquish's list prices for a $10K account, before the NOUR discount. no margin, no time limit. Vanquish is a separate company with its own rules and terms.</p>
-              </div>
-              <div class="price-box">
-                <p class="eyebrow">Your discount code</p>
-                <button type="button" class="coupon" data-copy="NOUR" aria-label="Copy discount code NOUR">
-                  <span class="coupon__code">NOUR</span>
-                  <span class="coupon__hint" data-copy-label>tap to copy</span>
-                </button>
-                <p class="price-box__terms">enter it at Vanquish checkout</p>
-                <a class="cta cta--lg cta--block" href="https://www.vanquishtrader.co/nour/" target="_blank" rel="noopener" id="vq-cta">Get funded with Vanquish</a>
-                <p class="fine-print">opens vanquishtrader.co in a new tab.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ============ FREE DISCORD ============ -->
-        <section class="section section--tight" id="free">
-          <div class="container">
-            <div class="panel discord reveal">
-              <span class="discord__icon" aria-hidden="true">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18 18 0 0 0-5.6 0L8.6 3a19.5 19.5 0 0 0-4.9 1.5C.6 9.1-.3 13.6.1 18.1a19.7 19.7 0 0 0 6 3l1.3-2.1a12.7 12.7 0 0 1-2-1l.5-.4a14 14 0 0 0 12.2 0l.5.4c-.6.4-1.3.7-2 1l1.3 2.1a19.6 19.6 0 0 0 6-3c.5-5.2-.8-9.7-3.6-13.7ZM8 15.3c-1.2 0-2.2-1.1-2.2-2.4S6.8 10.5 8 10.5s2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm8 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg>
-              </span>
-              <h2 class="display display--lg">Not ready for signals? <span class="gold-text">Start free.</span></h2>
-              <p class="prose-body">join the free StockHours Discord and start learning with the community today.</p>
-              <ul class="checklist discord__list">
-                <li>Live morning trade stream</li>
-                <li>Daily pre-market review &amp; watchlist</li>
-                <li>Weekly funded-account giveaways</li>
-                <li>Starter lessons &amp; trade ideas</li>
+              <ul class="offer__list">
+                <li>Live trade alerts during market hours</li>
+                <li>Entry, target &amp; stop on every signal</li>
+                <li>Full chat access</li>
+                <li data-b="algo-item" hidden>Nour's TradingView algorithm</li>
               </ul>
-              <a class="cta cta--lg cta--discord" href="https://whop.com/checkout/plan_WafKE7MWvAvTm" target="_blank" rel="noreferrer" data-checkout="plan_WafKE7MWvAvTm" id="free-cta">Join the free Discord</a>
-              <p class="fine-print">100% free · upgrade to signals anytime</p>
+
+              <a class="btn btn--xl btn--block" href="https://whop.com/checkout/plan_mNqOeTtQdUwdI" target="_blank" rel="noreferrer" data-checkout="plan_mNqOeTtQdUwdI" id="offer-cta">
+                <span data-b="cta">Join the Signals Chat</span>
+              </a>
+              <p class="offer__trust">★ 4.9 on Whop · 729 reviews · secure checkout by Whop</p>
             </div>
           </div>
-        </section>
 
-        <!-- ============ FAQ ============ -->
-        <section class="section" id="faq">
-          <div class="container">
-            <div class="section__head section__head--center reveal">
-              <p class="eyebrow">❓ Questions</p>
-              <h2 class="display display--lg">Got questions?</h2>
-            </div>
-            <div class="faq reveal">
-              <details>
-                <summary>what is StockHours?</summary>
-                <p class="prose-body">Nour's trading community on Whop. there's a free Discord for learning, and the paid Signals Chat where Nour posts live trade alerts during market hours.</p>
-              </details>
-              <details>
-                <summary>what's the difference between Signals and the VIP Bundle?</summary>
-                <p class="prose-body">the Signals Chat gets you every live alert (entry, target, stop and conviction) plus full chat access. the VIP Bundle adds Nour's TradingView algorithm, the exact tool he runs daily, for $26/mo more ($275/mo vs $249/mo). the algo on its own is normally $49/mo.</p>
-              </details>
-              <details>
-                <summary>how does the 3-month plan work?</summary>
-                <p class="prose-body">one payment covers 3 full months. Signals is $499.99 instead of $747 at the monthly rate (you save $247). the VIP Bundle is $549.99 instead of $825 (you save $275).</p>
-              </details>
-              <details>
-                <summary>how fast do i get in?</summary>
-                <p class="prose-body">instantly. check out and the signals channels unlock in your Whop sidebar. turn on notifications so you catch every alert.</p>
-              </details>
-              <details>
-                <summary>can i cancel?</summary>
-                <p class="prose-body">yes. monthly plans have no contract; cancel anytime from your Whop memberships.</p>
-              </details>
-              <details>
-                <summary>what's the Vanquish code?</summary>
-                <p class="prose-body">use code <b>NOUR</b> at checkout on vanquishtrader.co for a discount on a funded options account. Vanquish is a separate prop firm, sold separately from StockHours.</p>
-              </details>
-              <details>
-                <summary>do you guarantee profits?</summary>
-                <p class="prose-body">no. day trading is risky and most day traders lose. not every signal wins. StockHours is education. size your own risk and only trade what you can afford to lose.</p>
-              </details>
-            </div>
+          <div class="plans" aria-label="All plans">
+            <a class="plan" href="https://whop.com/checkout/plan_mNqOeTtQdUwdI" target="_blank" rel="noreferrer" data-checkout="plan_mNqOeTtQdUwdI">
+              <span class="plan__name">Signals · Monthly</span>
+              <span class="plan__price">$249<small>/mo</small></span>
+            </a>
+            <a class="plan" href="https://whop.com/checkout/plan_rJGyBGGeKU3xL" target="_blank" rel="noreferrer" data-checkout="plan_rJGyBGGeKU3xL">
+              <span class="plan__badge">Save $247</span>
+              <span class="plan__name">Signals · 3 months</span>
+              <span class="plan__price">$499.99</span>
+            </a>
+            <a class="plan" href="https://whop.com/checkout/plan_gSHcTOO8Tepwk" target="_blank" rel="noreferrer" data-checkout="plan_gSHcTOO8Tepwk">
+              <span class="plan__name">VIP · Monthly</span>
+              <span class="plan__price">$275<small>/mo</small></span>
+            </a>
+            <a class="plan" href="https://whop.com/checkout/plan_ZRJSPKXw7ttxY" target="_blank" rel="noreferrer" data-checkout="plan_ZRJSPKXw7ttxY">
+              <span class="plan__badge">Best value</span>
+              <span class="plan__name">VIP · 3 months</span>
+              <span class="plan__price">$549.99</span>
+            </a>
           </div>
-        </section>
-
-        <!-- ============ CLOSING ============ -->
-        <section class="section closing" id="ready">
-          <div class="container closing__inner reveal">
-            <p class="eyebrow">🔔 Market opens soon</p>
-            <h2 class="display display--lg">Get the watchlist <span class="gold-text">before the move.</span></h2>
-            <p class="prose-body">you've seen the chat. you know the setups. get in the room before the bell.</p>
-            <a class="cta cta--lg" href="#join" id="closing-cta">Join the Signals Chat <span class="cta__price">· from $249/mo</span></a>
-            <p class="fine-print">instant access · cancel anytime</p>
-          </div>
-        </section>
-      </main>
-
-      <!-- ============ FOOTER ============ -->
-      <footer class="footer">
-        <div class="container">
-          <div class="footer__brand">
-            <img src="/assets/img/logo.webp" alt="" width="28" height="28" loading="lazy" />
-            <span class="display">StockHours</span>
-          </div>
-          <p>trade alongside Nour.</p>
-          <p><a href="https://whop.com/joined/stock-hours/?tab=about" target="_blank" rel="noreferrer">StockHours on Whop</a> · <a href="https://nourtrades.com" target="_blank" rel="noreferrer">nourtrades.com</a></p>
-          <details class="disclosure">
-            <summary>Full disclosure</summary>
-            <p>StockHours LLC is an education company. We do not sell a business opportunity, "get rich quick" program, or money-making system. We do not make earnings claims, efforts claims, or claims that our training will make you any money. Signals are for educational purposes and are not financial advice.</p>
-            <p>StockHours LLC makes no assurance, representation, or promise regarding future earnings or income, or that you will make any specific amount of money, or any money at all, or that you will not lose money. Results shown are for illustrative purposes only, are not typical, and rely on individual effort, time, skill, market conditions and other factors.</p>
-            <p>Vanquish Trader is a third-party company not operated by StockHours LLC. Its products are subject to its own rules and terms.</p>
-            <p>Day trading is risky, and most day traders lose. <a href="https://www.investor.gov/additional-resources/spotlight/directors-take/thinking-day-trading-know-risks" target="_blank" rel="noreferrer">Know the risks</a>.</p>
-          </details>
-          <p>© 2026 StockHours LLC. All rights reserved.</p>
+          <p class="fine">Signals are for educational purposes and are not financial advice. Trade at your own risk.</p>
         </div>
-      </footer>
-    </div>
+      </section>
 
-    <!-- Sticky CTA (phones) -->
-    <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
-      <div class="sticky-cta__text">
-        <span class="sticky-cta__title">Signals Chat · $249/mo</span>
-        <span class="sticky-cta__terms">add the algo or go 3 months to save</span>
+      <!-- ======================= FUNDED ======================= -->
+      <section class="block block--tight" id="funded">
+        <div class="wrap">
+          <div class="funded">
+            <div class="funded__copy">
+              <h2 class="h3">Already trading the alerts? <span class="mark">Get funded.</span></h2>
+              <p>Take Nour's signals to a Vanquish Trader funded options account, up to $150K, with daily payouts. Code NOUR takes money off any plan.</p>
+            </div>
+            <button type="button" class="code" data-copy="NOUR" aria-label="Copy discount code NOUR">
+              <span class="code__label" data-copy-label>tap to copy</span>
+              <span class="code__value">NOUR</span>
+            </button>
+            <a class="btn" href="https://www.vanquishtrader.co/nour/" target="_blank" rel="noopener" id="vq-cta">Get funded <span class="btn__arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= FAQ ======================= -->
+      <section class="block" id="faq">
+        <div class="wrap wrap--narrow">
+          <div class="head head--center">
+            <h2 class="h2">Questions people ask before they join.</h2>
+          </div>
+          <div class="faq">
+            <details>
+              <summary>Is it worth $249 a month?</summary>
+              <p>That's your call, and you can make it with real information: monthly plans cancel anytime. For $249 you get every alert Nour takes during market hours, with the entry, target and stop, plus the pre-market watchlist and the full chat. Try a month and judge it on the trades.</p>
+            </details>
+            <details>
+              <summary>What does a day inside StockHours look like?</summary>
+              <p>Mornings start with pre-market analysis over voice and trade ideas written into the Discord. During market hours, Nour and Maki post live signals. At 8pm ET there's a lesson every night, on charting or trading vocabulary, and it always ends with a Q&amp;A, so it's close to a one-on-one. Option flow and news data come into the Discord all day.</p>
+            </details>
+            <details>
+              <summary>What's the difference between Signals and the VIP Bundle?</summary>
+              <p>Signals gets you every live alert plus full chat access. The VIP Bundle adds Nour's TradingView algorithm, the exact tool he runs daily, for $26/mo more ($275 vs $249). On its own the algo is normally $49/mo.</p>
+            </details>
+            <details>
+              <summary>How does the 3-month plan work?</summary>
+              <p>One payment covers 3 full months. Signals is $499.99 instead of $747 at the monthly rate, so you save $247. The VIP Bundle is $549.99 instead of $825, a $275 saving.</p>
+            </details>
+            <details>
+              <summary>How fast do I get in?</summary>
+              <p>Instantly. Check out and the signals channels unlock in your Whop sidebar. Turn on notifications so you catch every alert.</p>
+            </details>
+            <details>
+              <summary>Can I cancel?</summary>
+              <p>Yes. Monthly plans have no contract. Cancel anytime from your Whop memberships.</p>
+            </details>
+            <details>
+              <summary>Do you guarantee profits?</summary>
+              <p>No. Day trading is risky and most day traders lose. Not every signal wins. StockHours is education: size your own risk and only trade what you can afford to lose.</p>
+            </details>
+            <details>
+              <summary>What's the Vanquish code?</summary>
+              <p>Use code NOUR at checkout on Vanquish Trader for a discount on a funded options account. Vanquish is a separate prop firm, sold separately from StockHours.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= CLOSE ======================= -->
+      <section class="close" id="ready">
+        <div class="wrap wrap--narrow">
+          <h2 class="h1 h1--close">Join the <span class="mark">Signals Chat</span>.</h2>
+          <div class="cta-row">
+            <a class="btn btn--xl" href="#join" id="closing-cta">Join the Signals Chat <span class="btn__arrow" aria-hidden="true">→</span></a>
+            <a class="pricetag" href="#join">
+              <span class="pricetag__label">from</span>
+              <span class="pricetag__value">$249<small>/mo</small></span>
+            </a>
+          </div>
+          <div class="ps">
+            <p><b>P.S.</b> If you scrolled straight here: pre-market analysis every morning, live signals all day with the entry, target and stop, and a lesson with Q&amp;A every night at 8pm ET. One member posted $7,100 in closed winners in 23 days. Monthly plans cancel anytime, so you can try a month and see for yourself.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap wrap--narrow">
+        <p class="footer__free">Not ready for signals? <a href="https://whop.com/checkout/plan_WafKE7MWvAvTm" target="_blank" rel="noreferrer" data-checkout="plan_WafKE7MWvAvTm" id="free-cta">Start with the free Discord</a>: live morning stream, pre-market review, weekly funded-account giveaways and starter lessons.</p>
+        <div class="footer__brand">
+          <img src="/assets/img/logo.webp" alt="" width="28" height="28" loading="lazy" />
+          <span>StockHours</span>
+        </div>
+        <p><a href="https://whop.com/joined/stock-hours/?tab=about" target="_blank" rel="noreferrer">StockHours on Whop</a> · <a href="https://nourtrades.com" target="_blank" rel="noreferrer">nourtrades.com</a></p>
+        <details class="disclosure">
+          <summary>Full disclosure</summary>
+          <p>StockHours LLC is an education company. We do not sell a business opportunity, "get rich quick" program, or money-making system. We do not make earnings claims, efforts claims, or claims that our training will make you any money. Signals are for educational purposes and are not financial advice.</p>
+          <p>StockHours LLC makes no assurance, representation, or promise regarding future earnings or income, or that you will make any specific amount of money, or any money at all, or that you will not lose money. Results shown are for illustrative purposes only, are not typical, and rely on individual effort, time, skill, market conditions and other factors. Screenshots show winning trades members chose to post; they do not show members' full trading history or losses.</p>
+          <p>Vanquish Trader is a third-party company not operated by StockHours LLC. Its products are subject to its own rules and terms.</p>
+          <p>Day trading is risky, and most day traders lose. <a href="https://www.investor.gov/additional-resources/spotlight/directors-take/thinking-day-trading-know-risks" target="_blank" rel="noreferrer">Know the risks</a>.</p>
+        </details>
+        <p>© 2026 StockHours LLC. All rights reserved.</p>
       </div>
-      <a class="cta cta--sm" href="#join" tabindex="-1">Join</a>
+    </footer>
+
+    <!-- Sticky bar -->
+    <div class="sticky" id="sticky-cta" aria-hidden="true">
+      <a class="sticky__price" href="#join" tabindex="-1"><span>Signals Chat</span> <b>$249/mo</b></a>
+      <a class="btn sticky__btn" href="#join" tabindex="-1">Join the Signals Chat</a>
     </div>
 
     <!-- Screenshot lightbox -->
@@ -688,28 +625,25 @@
     <dialog id="checkout-dialog" class="checkout-dialog" aria-label="Checkout">
       <div class="checkout-dialog__panel">
         <header class="checkout-dialog__bar">
-          <span class="eyebrow" id="checkout-title">🔒 Secure checkout</span>
+          <span class="checkout-dialog__title" id="checkout-title">Secure checkout</span>
           <button type="button" class="icon-btn" data-close aria-label="Close">
-            <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-              <path d="M1.5 1.5l11 11m0-11l-11 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1.5 1.5l11 11m0-11l-11 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
           </button>
         </header>
         <div class="checkout-dialog__body">
-          <div id="checkout-loading" class="checkout-status prose-body" role="status">
+          <div id="checkout-loading" class="checkout-status" role="status">
             <div class="spinner" aria-hidden="true"></div>
             <p>Loading secure checkout…</p>
           </div>
-          <div id="checkout-error" class="checkout-status prose-body" role="alert" hidden>
+          <div id="checkout-error" class="checkout-status" role="alert" hidden>
             <p>The checkout couldn't load here.</p>
-            <a class="cta" href="https://whop.com/checkout/plan_mNqOeTtQdUwdI" target="_blank" rel="noreferrer">Open checkout on Whop</a>
+            <a class="btn" href="https://whop.com/checkout/plan_mNqOeTtQdUwdI" target="_blank" rel="noreferrer">Open checkout on Whop</a>
           </div>
           <div id="whop-checkout"></div>
         </div>
       </div>
     </dialog>
 
-    <script src="https://cdn.whop.com/elements/amber/elements.js" data-whop-elements async></script>
     <script src="/assets/checkout.js" defer></script>
     <script src="/assets/site.js" defer></script>
   </body>

@@ -20,7 +20,7 @@ Partner section: Vanquish Trader (https://www.vanquishtrader.co/nour/) with code
 
 ## Page (sales layout)
 
-Top to bottom: gold proof bar · hero with Nour's "How I Trade the Open" video (loads on tap) · ticker of member wins · Mohammed S.'s posted-wins statement ($7,100, Jul 6 to Jul 28) · receipts wall (24 profits-chat screenshots) and member testimonials · Nour on Wall Street · on-your-own vs Signals Chat · 3 steps · plan comparison + plan builder (`#join`) · Vanquish NOUR row · FAQ · close with P.S. · footer with the free Discord link and full disclosure.
+Top to bottom: gold proof bar · hero with Nour's 46-second welcome video (self-hosted, loads on tap) · ticker of member wins · Mohammed S.'s posted-wins statement ($7,100, Jul 6 to Jul 28) · receipts wall (24 profits-chat screenshots) and member testimonials · Nour on Wall Street · on-your-own vs Signals Chat · 3 steps · plan comparison + plan builder (`#join`) · Vanquish NOUR row · FAQ · close with P.S. · footer with the free Discord link and full disclosure.
 
 ## Files
 
@@ -31,9 +31,11 @@ Top to bottom: gold proof bar · hero with Nour's "How I Trade the Open" video (
 - `assets/checkout.js` — Whop embedded checkout (plan IDs live here)
 - `assets/site.js` — video, receipts "see all", lightbox, plan builder, copy code, sticky bar
 - `assets/fonts/caveat-latin.woff2` — hand-written font
-- `assets/img/video-thumb.webp` — hero video thumbnail (video id is `data-video` in `index.html`)
+- `assets/video/vsl.mp4` — hero video, 1080p web encode (8 MB) of `source/vsl-original.mp4` (4K original, not loaded by the page)
+- `assets/img/vsl-poster.webp` — the video's cover frame
 
-To change the hero video, set `data-video`, `data-start` and `data-title` on the `.video` element and replace `assets/img/video-thumb.webp`. Captions on the receipts and the statement rows are typed from the screenshots; update them if you swap images.
+To change the hero video, point `data-src` / `data-poster` on the `.video` element at new files (or use `data-video="<YouTube id>"` instead for a YouTube video). Re-encode a new upload with:
+`ffmpeg -i in.mp4 -vf scale=1920:-2 -c:v libx264 -preset slow -crf 24 -c:a aac -b:a 128k -movflags +faststart assets/video/vsl.mp4`. Captions on the receipts and the statement rows are typed from the screenshots; update them if you swap images.
 
 ## Deploy
 

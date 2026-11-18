@@ -1,4 +1,4 @@
-// Welcome page interactions: video, receipts "see all", lightbox, plan builder
+// Welcome page interactions: video (self-hosted or YouTube), receipts "see all", lightbox, plan builder
 // (upsells), coupon copy and the sticky bar. Everything degrades to static content.
 (function () {
   "use strict";
@@ -6,12 +6,27 @@
   var hasIO = "IntersectionObserver" in window;
 
   /* ---------- YouTube: load the player only when someone presses play ---------- */
-  var videos = document.querySelectorAll("[data-video]");
+  var videos = document.querySelectorAll(".video[data-video], .video[data-src]");
   for (var v = 0; v < videos.length; v++) {
     (function (box) {
       var play = box.querySelector(".video__play");
       if (!play) return;
       play.addEventListener("click", function () {
+        // Self-hosted video (data-src): swap in a <video> and start it.
+        if (box.hasAttribute("data-src")) {
+          var vid = document.createElement("video");
+          vid.src = box.getAttribute("data-src");
+          vid.poster = box.getAttribute("data-poster") || "";
+          vid.controls = true;
+          vid.playsInline = true;
+          vid.setAttribute("playsinline", "");
+          vid.preload = "auto";
+          vid.setAttribute("aria-label", box.getAttribute("data-title") || "Video");
+          box.replaceChild(vid, play);
+          var started = vid.play();
+          if (started && started.catch) started.catch(function () {});
+          return;
+        }
         var iframe = document.createElement("iframe");
         iframe.src =
           "https://www.youtube-nocookie.com/embed/" + box.getAttribute("data-video") +

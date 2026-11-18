@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="100" fill="white"/>
+  <g fill="black">
+    <!-- a: bowl + tail nub -->
+    <circle cx="49" cy="101" r="27"/>
+    <rect x="65" y="103" width="11" height="25"/>
+    <!-- b: ascender stem + bowl -->
+    <rect x="73" y="47" width="11" height="81"/>
+    <circle cx="100" cy="101" r="27"/>
+    <!-- c: bowl -->
+    <circle cx="151" cy="101" r="27"/>
+  </g>
+  <g fill="white">
+    <!-- counters -->
+    <circle cx="49" cy="101" r="14"/>
+    <circle cx="100" cy="101" r="14"/>
+    <circle cx="151" cy="101" r="14"/>
+    <!-- c opening notch -->
+    <rect x="151" y="95" width="29" height="12"/>
+  </g>
+</svg>

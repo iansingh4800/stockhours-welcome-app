@@ -5,6 +5,30 @@
 
   var hasIO = "IntersectionObserver" in window;
 
+  /* ---------- open at the top ----------
+     Inside the Whop app the page must open at the hero. Turn off scroll
+     restoration and, until the visitor touches, scrolls or types, undo any
+     scroll that something else (a third-party frame taking focus, a late
+     layout shift) causes. Links to a #section are left alone. */
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  if (!window.location.hash) {
+    var userMoved = false;
+    var markUser = function () {
+      userMoved = true;
+    };
+    ["touchstart", "pointerdown", "wheel", "keydown"].forEach(function (type) {
+      window.addEventListener(type, markUser, { passive: true, capture: true });
+    });
+    var holdTop = function () {
+      if (!userMoved && window.scrollY > 0) window.scrollTo(0, 0);
+    };
+    window.addEventListener("scroll", holdTop, { passive: true });
+    window.addEventListener("load", holdTop);
+    setTimeout(function () {
+      window.removeEventListener("scroll", holdTop);
+    }, 8000);
+  }
+
   /* ---------- YouTube: load the player only when someone presses play ---------- */
   var videos = document.querySelectorAll(".video[data-video], .video[data-src]");
   for (var v = 0; v < videos.length; v++) {

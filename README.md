@@ -28,7 +28,13 @@ Partner section: Vanquish Trader (https://www.vanquishtrader.co/nour/) with code
 
 ## Deploy
 
-Plain static files, no build step. Deploy the repo root to Vercel (framework preset: Other), then set the deployed URL as the app view in the Whop developer dashboard.
+Plain static files, no build step.
+
+1. Import this repo in Vercel (framework preset: **Other**, no build command, output = repo root) and deploy.
+2. In the Whop developer dashboard → your app → **Hosting**: set **Base URL** to the Vercel URL (e.g. `https://stockhours-welcome.vercel.app`) and **Experience path** to `/experiences/[experienceId]`.
+3. Reload the app in your Whop.
+
+`vercel.json` rewrites `/experiences/<id>` to `index.html`, which is the path Whop loads inside the app frame.
 
 Preview locally:
 

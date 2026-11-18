@@ -18,13 +18,22 @@ Upsells in the plan builder (`#join`), as on nourtrades.com:
 
 Partner section: Vanquish Trader (https://www.vanquishtrader.co/nour/) with code `NOUR`.
 
+## Page (sales layout)
+
+Top to bottom: gold proof bar · hero with Nour's "How I Trade the Open" video (loads on tap) · ticker of member wins · Mohammed S.'s posted-wins statement ($7,100, Jul 6 to Jul 28) · receipts wall (24 profits-chat screenshots) and member testimonials · Nour on Wall Street · on-your-own vs Signals Chat · 3 steps · plan comparison + plan builder (`#join`) · Vanquish NOUR row · FAQ · close with P.S. · footer with the free Discord link and full disclosure.
+
 ## Files
 
 - `index.html` — the welcome page
 - `thanks.html` — return page after Whop checkout
+- `assets/sales.css` — styles for `index.html` (black and gold, Archivo, Caveat for hand-written notes)
+- `assets/styles.css` — older styles, still used by `thanks.html`
 - `assets/checkout.js` — Whop embedded checkout (plan IDs live here)
-- `assets/site.js` — plan builder, results reel, lightbox, copy code, sticky CTA
-- `assets/styles.css` — styles
+- `assets/site.js` — video, receipts "see all", lightbox, plan builder, copy code, sticky bar
+- `assets/fonts/caveat-latin.woff2` — hand-written font
+- `assets/img/video-thumb.webp` — hero video thumbnail (video id is `data-video` in `index.html`)
+
+To change the hero video, set `data-video`, `data-start` and `data-title` on the `.video` element and replace `assets/img/video-thumb.webp`. Captions on the receipts and the statement rows are typed from the screenshots; update them if you swap images.
 
 ## Deploy
 

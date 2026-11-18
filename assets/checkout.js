@@ -195,7 +195,7 @@
 
   function openDialog(plan) {
     var name = PLANS[plan].name;
-    if (titleEl) titleEl.textContent = "🔒 Secure checkout · " + name;
+    if (titleEl) titleEl.textContent = "Secure checkout · " + name;
     dialog.setAttribute("aria-label", "Checkout: " + name);
     if (errorLink) errorLink.setAttribute("href", hostedUrl(plan));
     if (!dialog.open) dialog.showModal();
